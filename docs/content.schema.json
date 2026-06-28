@@ -164,7 +164,7 @@
     },
     "panel": {
       "type": "object",
-      "description": "A single comic frame: a background image plus optional speech bubbles, a terminal bar, a caption, and a deep link.",
+      "description": "A single comic frame: a background image plus optional speech bubbles, a terminal bar or details note, a caption, and a deep link.",
       "additionalProperties": false,
       "required": ["img", "alt", "caption"],
       "properties": {
@@ -191,6 +191,11 @@
         "term": {
           "type": "array",
           "description": "Legacy alias for 'terminal'. Prefer 'terminal'.",
+          "items": { "type": "string" }
+        },
+        "details": {
+          "type": "array",
+          "description": "Light teal-accented note card shown in the bottom strip as an alternative to 'terminal' (use one or the other). Plain prose lines - no terminal styling, comments or copy buttons. Good for explainer text that isn't a command.",
           "items": { "type": "string" }
         },
         "link": {
